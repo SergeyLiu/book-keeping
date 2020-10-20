@@ -49,7 +49,9 @@ def function1():
 
     #读取结束
     #将当天花销写入文件
-    expensesFrame.at[month, str(day)] = total
+    expensesArr = np.array(expensesFrame)
+    expensesArr[month-1, day-1] = total
+    expensesFrame = pd.DataFrame(expensesArr, index=months, columns=days)
     expensesFrame.to_csv(filename, sep=',', header=True, index=True)
 
 #   实现功能2：查询具体某天花销
