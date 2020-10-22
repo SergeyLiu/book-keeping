@@ -84,12 +84,13 @@ def function3():
             countExp.append(monthExp[i])
             Index.append(i)
             count += 1
-    totalExp = np.sum(countExp)
+    totalExp = float(np.sum(countExp))
     if count == 0:
         print("当月无记账记录")
     else:
-        print("自" + str(Index[0] + 1) + "号起，共记账" + str(count) + "天，总花销" + str(totalExp) + "元，平均每天" + str(
-            totalExp / count) + "元")
+        # print("自" + str(Index[0] + 1) + "号起，共记账" + str(count) + "天，总花销" + str(totalExp) + "元，平均每天" + str(
+        #     totalExp / count) + "元")
+        print("自%d号起，共记账%d天，总花销%.2f元，平均每天%.2f元" % (Index[0] + 1, count, totalExp,totalExp / count))
 
 
 #   实现功能4：可视化本月每日花销
